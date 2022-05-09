@@ -46,13 +46,14 @@ public class DeliveryEventGenerator {
 
 	static class DeliveryIterator {
 		private Map<String, Long> nextTimestampPerKey;
+		private Random randomno = new Random();
 
 		DeliveryIterator() {
 			nextTimestampPerKey = new HashMap<>();
 		}
 
 		DeliveryRide next() {
-			return new DeliveryRide(true, nextTimestamp("begin"), nextTimestamp("end"), rideId);
+			return new DeliveryRide(randomno.nextBoolean(), nextTimestamp("begin"), nextTimestamp("end"), rideId);
 		}
 
 		private Date nextTimestamp(String page) {
