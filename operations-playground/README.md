@@ -33,6 +33,7 @@ Create the checkpoint and savepoint directories on the Docker host machine (thes
 ```bash
 mkdir -p /tmp/flink-checkpoints-directory
 mkdir -p /tmp/flink-savepoints-directory
+mkdir -p /tmp/flink-output-directory
 ```
 
 ### Starting the Playground
@@ -60,5 +61,5 @@ docker-compose down
 
 ## Further instructions
 
-The playground setup and more detailed instructions are presented in the
-["Getting Started" guide](https://ci.apache.org/projects/flink/flink-docs-release-1.12/try-flink/flink-operations-playground.html) of Flink's documentation.
+docker-compose exec kafka kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic input
+
